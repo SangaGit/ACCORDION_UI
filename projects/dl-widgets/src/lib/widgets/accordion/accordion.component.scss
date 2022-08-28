@@ -1,0 +1,61 @@
+:host {
+    --accordion-header-height: 50px;
+    --accordion-header-bg: hsl(0, 0%, 60%);
+    --accordion-border-radius: 8px;
+    width: 100%;
+  }
+  .accordion {
+    &__content {
+      border-bottom: 2px solid black;
+      &--child{
+          padding: 1rem;
+      }
+    }
+    &__header {
+        display: flex;
+        padding: 3rem 1rem;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        height: var(--accordion-header-height);
+        cursor: pointer;
+        
+        &.active{
+            background: var(--accordion-header-bg);
+            border: none;
+        }
+    }
+    &__title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        h3{
+            font-family: 'oswald-bold';
+        }
+    }
+    &__toggle-btn {
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in;
+        background: var(--yelow);
+        display: flex;
+        svg {
+            transition: transform 0.3s ease-in;
+            padding: 0.5rem;
+        }
+    }
+    &__item.active &__toggle-btn{
+        svg {
+            transform: rotate(135deg);
+        }
+    }
+    &__item &__header:focus-within {
+        border-color: var(--primary);
+    }
+    &__toggle-btn:focus {
+        outline: none;
+    }
+  }
+  

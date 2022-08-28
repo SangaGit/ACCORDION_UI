@@ -1,0 +1,35 @@
+<section class="accordion">
+    <div
+      *ngFor="let item of data; index as i"
+      class="accordion__item"
+      [class.active]="expanded?.has(i)"
+    >
+      <header
+        class="accordion__header"
+        [class.active]="expanded?.has(i)"
+        (click)="toggleState(i)"
+      >
+        <label class="accordion__title"> <h3>{{'Q'+ item?.id}}</h3><p>{{ item?.question }}</p> </label>
+        <button class="accordion__toggle-btn">
+          <svg
+            class="svg-rotate__icon"
+            width="40px"
+            height="40px"
+            viewBox="0 0 357 357"
+          >
+            <g id="add">
+              <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z" />
+            </g>
+          </svg>
+        </button>
+      </header>
+      <div
+        class="accordion__content"
+        [class.expanded]="expanded?.has(i)"
+        [@contentExpansion]="expanded?.has(i) ? 'expanded' : 'collapsed'"
+      >
+        <p class="accordion__content--child">{{ item?.answer }}</p>
+      </div>
+    </div>
+  </section>
+  
