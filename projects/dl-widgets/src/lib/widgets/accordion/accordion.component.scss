@@ -1,27 +1,26 @@
 :host {
-    --accordion-header-height: 50px;
-    --accordion-header-bg: hsl(0, 0%, 60%);
-    --accordion-border-radius: 8px;
     width: 100%;
   }
+  $accordion-header-bg : hsl(0deg 0% 66%);
+  $accordion-border-bottom-bg : hsl(120deg 4% 11%);
+  $accordion-toggle-button-bg : hsl(50deg 100% 50%);
   .accordion {
     &__content {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $accordion-border-bottom-bg;
       &--child{
           padding: 1rem;
       }
     }
     &__header {
         display: flex;
-        padding: 3rem 1rem;
+        padding: 1rem 1rem;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 2px solid black;
-        height: var(--accordion-header-height);
+        border-bottom: 2px solid $accordion-border-bottom-bg;
         cursor: pointer;
         
         &.active{
-            background: var(--accordion-header-bg);
+            background: $accordion-header-bg;
             border: none;
         }
     }
@@ -39,7 +38,7 @@
         border: none;
         cursor: pointer;
         transition: transform 0.3s ease-in;
-        background: var(--yelow);
+        background: $accordion-toggle-button-bg;
         display: flex;
         svg {
             transition: transform 0.3s ease-in;

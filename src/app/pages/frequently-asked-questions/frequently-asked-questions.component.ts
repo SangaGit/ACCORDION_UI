@@ -12,6 +12,7 @@ export class FrequentlyAskedQuestionsComponent implements OnInit {
   collapse = false;
   subscriptions: Subscription[] = [];
   questionsAndAnswers!: Question[];
+  header = 'HAVE A QUESTION? WE CAN HELP';
   constructor(private _faqService: FrequentlyAskedQuestionsService) {}
 
   ngOnInit(): void {
